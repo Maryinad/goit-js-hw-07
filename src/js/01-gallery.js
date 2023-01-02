@@ -61,6 +61,7 @@ const showMarkup = galleryContainerEl.insertAdjacentHTML(
 galleryContainerEl.addEventListener("click", onClickGalleryItem);
 
 function onClickGalleryItem(event) {
+  event.preventDefault();
   if (event.target === event.currentTarget) {
     return;
   }
@@ -78,10 +79,11 @@ function onClickGalleryItem(event) {
 
   function closeOriginalPhoto(event) {
     if (event.code === "Escape") {
-      console.log("close");
+      //   console.log("close");
       instance.close();
       window.removeEventListener("keydown", closeOriginalPhoto);
     }
+
     console.log(event);
   }
 }
